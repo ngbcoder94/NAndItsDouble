@@ -30,18 +30,46 @@ public class NAndItsDouble{
                                 
                                 return false;   //If arr.length is 0 or 1, then just return false.
                         }
+
+                        //Now I need to check if I am on the first index of arr
+                        if(i == 0){
+                                set.add(arr[i]);    //If so, just add arr[i] to the set.
+                        }
+                        else{
+                                int arrVal = arr[i];    //Store the value of arr[i]. 
+
+                                //Check if I have seen 2*arr[i].
+                                if(set.contains((2*arrVal)) == true){
+                                        
+                                        //If so, check if i != j.
+                                        if(i != arrVal){
+                                                
+                                                //Now I need to check the condition 0 <= i AND j < arr.length.
+                                                if(i >= 0 && (2*arrVal) < arr.length){
+                                                        
+                                                        return true;     //If I pass all the conditions above, return true.
+                                                }
+                                        }
+                                }
+                                else{
+                                        
+                                        //If I fall in here, I just need to add arr[i] to the set and keep moving.
+                                        set.add(arrVal);
+                                }
+                        }
                 }
+
+                //If I get to the end of the array and haven't returned false already...
+                //...then there doesn't exist two indicies that meet the problems conditions and I need to return false.
+                return false;
         }
 
         public static void main(String[] args){
 
-                HashSet<Integer> set = new HashSet<>();
+                int[] helperData = {10, 2, 5, 3};            //Create some test data.
 
-                set.add(1); 
-                set.add(2);
-                set.add(12);
-                set.add(5);
-
-                System.out.println(set.contains(5));
+                NAndItsDouble tmpObj = new NAndItsDouble();      //Create an instance of the object for testing.
+                
+                System.out.println(tmpObj.checkIfExists(helperData));
         }
 }
