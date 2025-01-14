@@ -4,7 +4,7 @@
  * Date: 01/11/2025
  * Author: Nick Burkett
  *
- * Status: WIP
+ * Status: SOLVED
  */
 
 import java.io.*;       //Need to import a library for the hashmap.
