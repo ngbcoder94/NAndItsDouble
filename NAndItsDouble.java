@@ -20,16 +20,15 @@ public class NAndItsDouble{
          */
         public boolean checkIfExists(int[] arr){
                 
+                //Need to check my edge cases.
+                if(arr.length == 0 || arr.length == 1){
+                        return false;
+                }
+
                 HashSet<Integer> set = new HashSet<>();     //Need to initialize a hashset to store items in arr[].
 
                 //Now I need to loop through the array and start the process of looking.
-                for(int i = 0; i < arr.length; i++){
-                        
-                        //Need to check the edge case of arr.length = 0 or arr.length = 1. 
-                        if(arr.length == 0 || arr.length == 1){
-                                
-                                return false;   //If arr.length is 0 or 1, then just return false.
-                        }
+                for(int i = 0; i < arr.length; i++){ 
 
                         //Now I need to check if I am on the first index of arr
                         if(i == 0){
