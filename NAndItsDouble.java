@@ -40,15 +40,10 @@ public class NAndItsDouble{
                                 //Check if I have seen 2*arr[i].
                                 if(set.contains((2*arrVal)) == true){
                                         
-                                        //If so, check if i != j.
-                                        if(i != arrVal){
-                                                
-                                                //Now I need to check the condition 0 <= i AND j < arr.length.
-                                                if(i >= 0 && (2*arrVal) < arr.length){
-                                                        
-                                                        return true;     //If I pass all the conditions above, return true.
-                                                }
-                                        }
+                                        return true;    //If I have found 2*arr[i] then return true.
+                                }
+                                else if((arrVal%2) == 0 && set.contains((arrVal/2))){
+                                        return true;    //Need to check if there exists 2*arr[i] after arr[i]. 
                                 }
                                 else{
                                         
@@ -65,7 +60,7 @@ public class NAndItsDouble{
 
         public static void main(String[] args){
 
-                int[] helperData = {10, 2, 5, 3};            //Create some test data.
+                int[] helperData = {3, 1, 7, 11};            //Create some test data.
 
                 NAndItsDouble tmpObj = new NAndItsDouble();      //Create an instance of the object for testing.
                 
